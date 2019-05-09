@@ -1,0 +1,17 @@
+http://localhost:8888/rest/student/getInfo/1
+
+
+	
+
+	 Method POST
+	 Headers
+	 Content-Type : application/json
+	 http://localhost:8888/rest/student/save
+	 {
+	  "name" : "test",
+	  "email" : "test@g.com"
+	 }
+	 
+	 
+	  http://localhost:8888/rest/student/1
+
