@@ -33,7 +33,6 @@ public class StudentController {
 		StudentDao  sdao = new StudentDao();
 		Student student = sdao.getStudent(studentId);
 		return Response.status(200).entity("hello").build(); 
-	
 	}
 
 }
