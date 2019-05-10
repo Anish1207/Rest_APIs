@@ -1,0 +1,5 @@
+/target/
+src/main/webapp/WEB-INF/lib/WEB-INF/appengine-generated/local_db.bin
+src/main/webapp/WEB-INF/lib/WEB-INF/classes/
+src/main/webapp/WEB-INF/lib/WEB-INF/lib/
+test
