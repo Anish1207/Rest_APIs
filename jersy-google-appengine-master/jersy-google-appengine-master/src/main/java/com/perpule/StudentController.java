@@ -32,7 +32,7 @@ public class StudentController {
 	public Response getStudent(@PathParam("id") Long studentId) {  
 		StudentDao  sdao = new StudentDao();
 		Student student = sdao.getStudent(studentId);
-		return Response.status(200).entity("hello").build(); 
+		return Response.status(200).entity(student).build(); 
 	}
 
 }
