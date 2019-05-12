@@ -34,5 +34,25 @@
     <listener>
 		<listener-class>com.perpule.AppInit</listener-class>
 	</listener>
+	
+	<security-constraint>
+		<display-name>SecurityConstraint</display-name>	
+        <web-resource-collection>
+            <web-resource-name>admin</web-resource-name>
+            <url-pattern>/admin/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+    
+    
+	<login-config>
+		<auth-method>BASIC</auth-method>  
+		<realm-name>default</realm-name>
+	</login-config>
       
 </web-app>
