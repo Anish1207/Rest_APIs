@@ -9,16 +9,18 @@ import com.perpule.model.Student;
 
 
 public class AppInit implements ServletContextListener {
+	
+
 	public void contextInitialized(ServletContextEvent event) {
+		
+	
 		//ObjectifyService.init();
         ObjectifyService.register(Student.class);
         
         ObjectifyService.run(new VoidWork() {
-        public void vrun() {
-           
-        }
-    });
-	
+	        public void vrun() {   
+	        }
+        });
 	}
 
 	@Override

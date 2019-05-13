@@ -1,5 +1,10 @@
-com\perpule\model\Student.class
+com\perpule\provider\GsonMessageBodyHandler.class
+com\perpule\CustomApplication.class
 com\perpule\AppInit$1.class
-com\perpule\AppInit.class
+com\perpule\provider\AuthenticationFilter.class
 com\perpule\StudentController.class
+com\perpule\model\Students.class
+com\perpule\model\Student.class
+com\perpule\AppInit.class
 dao\StudentDao.class
+com\perpule\client\JerseyClientExamples.class
