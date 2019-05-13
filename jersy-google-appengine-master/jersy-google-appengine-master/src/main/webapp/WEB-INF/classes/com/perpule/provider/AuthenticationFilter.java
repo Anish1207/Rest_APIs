@@ -1,7 +1,5 @@
 package com.perpule.provider;
 
-
-
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -27,7 +25,7 @@ import org.glassfish.jersey.internal.util.Base64;
  * */
 
 @Provider
-public class AuthenticationFilter {
+public class AuthenticationFilter implements javax.ws.rs.container.ContainerRequestFilter{
 	
 	@Context
     private ResourceInfo resourceInfo;
@@ -39,7 +37,7 @@ public class AuthenticationFilter {
     private static final Response ACCESS_FORBIDDEN = Response.status(Response.Status.FORBIDDEN)
     													.entity("Access blocked for all users !!").build();
      
-  
+    @Override
     public void filter(ContainerRequestContext requestContext)
     {
         Method method = resourceInfo.getResourceMethod();
@@ -62,7 +60,7 @@ public class AuthenticationFilter {
             //If no authorization information present; block access
             if(authorization == null || authorization.isEmpty())
             {
-                requestContext.abortWith(ACCESS_DENIED);
+            	requestContext.abortWith(Response.status(Response.Status.UNAUTHORIZED).entity("Access not authorised").build());;
                 return;
             }
              
