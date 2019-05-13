@@ -6,5 +6,6 @@ com\perpule\StudentController.class
 com\perpule\model\Students.class
 com\perpule\model\Student.class
 com\perpule\AppInit.class
+com\perpule\MissingFileException.class
 dao\StudentDao.class
 com\perpule\client\JerseyClientExamples.class

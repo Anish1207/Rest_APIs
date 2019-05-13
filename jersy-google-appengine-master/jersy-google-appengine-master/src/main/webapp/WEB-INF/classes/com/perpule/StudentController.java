@@ -20,7 +20,7 @@ import javax.ws.rs.core.Response;
 
 import com.perpule.model.Student;
 import com.perpule.model.Students;
-
+import com.perpule.MissingFileException;
 import dao.StudentDao;
  
 @Path("/student")
@@ -40,9 +40,12 @@ public class StudentController {
 	@RolesAllowed("ADMIN")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getStudent(@PathParam("id") Long studentId) {  
+	public Response getStudent(@PathParam("id") Long studentId) throws MissingFileException{  
 		StudentDao  sdao = new StudentDao();
 		Student student = sdao.getStudent(studentId);
+		if (student==null) {
+			throw new MissingFileException(studentId + " does not exist on this server !!");
+		}
 		return Response.status(200).entity(student).build(); 
 	}
 
